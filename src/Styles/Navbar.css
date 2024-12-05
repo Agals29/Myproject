@@ -1,0 +1,316 @@
+.navbar {
+  display: flex;
+  justify-content:safe;
+  align-items: center;
+  background-color: #fbfbfc;
+  padding: 13px;
+  border-bottom: 2px solid #ccc;
+  border-bottom-left-radius: 100px; /* Add curve to bottom-left */
+  border-bottom-right-radius: 100px; /* Add curve to bottom-right */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ position: sticky;
+}
+.navbar-brand h1 {
+  font-size: 25px;
+  color: #000;
+}
+.navbar-brand span {
+  color: #ff6600;
+}
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  gap:1px;
+  padding: 10px 110px;
+}
+.nav-links li {
+  position: relative;
+}
+.nav-links a {
+  text-decoration: none;
+
+  font-size: 16px;
+  font-family:sans-serif;
+  line-height: 1.80820;
+  padding: 10px 10px;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  padding-left: 21px;
+  font-weight:550;
+}
+.nav-links a:hover {
+  color: white;
+  background: #d65106;
+  border-radius: 5px;
+  padding: 12px;
+}
+img {
+  margin-left: 95px;
+  height: 60px;
+  width: 300px;
+}
+.navbar-brand img {
+  width: 145px;
+}
+/* Move the toggle button to the right */
+.navbar-toggler {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+/* Navbar Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+.nav-links li {
+  margin-left: 20px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #636161;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 5px;
+
+}
+.nav-links a:hover {
+  background-color:#d65106;
+  color: #fff;
+}
+/* Responsive Styles */
+/* Base Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 14px 40px;
+}
+
+/* Navbar links */
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Mobile View - Hide nav-links by default */
+.nav-links {
+  display: none;
+}
+
+/* Show nav-links when the mobile menu is open */
+.nav-links.show {
+  display: block;
+}
+
+/* Navbar toggler button (Hamburger) */
+.navbar-toggler {
+  display: none; /* Hide by default */
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* Fullscreen container */
+.navbar {
+  position: absolute; /* Position the navbar absolutely */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Make sure it is above the carousel */
+  background-color: rgba(255, 255, 255, 0.986); /* Optional: semi-transparent background */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: add some shadow for depth */
+}
+/* Navigation Links Styling */
+.nav-links {
+  display: flex; /* Align all items in a row */
+  justify-content: space-between; /* Space evenly */
+  align-items: center; /* Vertically align items */
+  list-style: none; /* Remove default bullet points */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+/* Ensure all list items, including dropdowns, are inline */
+.nav-links li {
+  position: relative; /* Needed for dropdown alignment */
+  margin-left: 20px; /* Spacing between items */
+  margin-right: 0; /* Avoid extra spacing on the right */
+}
+
+/* Dropdown Styling */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  font-size: 18px; /* Ensure inline alignment */
+}
+
+/* Adjust spacing for dropdown triggers (PAGES and BLOG) */
+.dropdown span {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 15px; /* Consistent padding */
+  color: #3a3939;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5px;
+  margin-bottom: 2px;
+}
+
+.dropdown:hover span {
+  background-color: #d65106;
+  color: #fff;
+
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Dropdown appears directly below trigger */
+  left: 0;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  list-style: none;
+  min-width: 150px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+/* Show dropdown when parent is hovered or clicked */
+.dropdown:hover .dropdown-menu,
+.dropdown.show .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  background-color: rgb(244, 248, 248);
+}
+
+/* Dropdown Menu Items */
+.dropdown-menu li {
+  margin: 0;
+  
+}
+
+.dropdown-menu span a {
+  display: block;
+
+ 
+  color: #ac2626;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.dropdown-menu  a:hover {
+  background-color: #d65106;
+  color: #fff;
+}
+
+
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: #f8f9fa;
+    padding: 1rem;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .navbar-brand {
+    flex: 1;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    background-color: #fff;
+  }
+}
+/* Hide dropdown menu by default */
+.dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #f8f9fa;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0.7rem 0;
+  z-index: 1000;
+}
+
+/* Show dropdown when 'open' class is added */
+.dropdown-menu.open {
+  display: block; /* Make it visible */
+}
+
+/* Dropdown menu items */
+.dropdown-menu li {
+  padding: 0.5rem 1rem;
+}
+
+.dropdown-menu a {
+  color: #2b2929;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 200px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #d65106;
+  color: white;
+  border-radius: 5px;
+width:100px;
+  
+}

@@ -1,0 +1,52 @@
+/* Container for gallery */
+.gallery-container {
+  background-color: #fff; /* White background */
+  padding: 20px;
+}
+
+/* Gallery Heading Styling */
+.gallery-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center; /* Ensures text is centered horizontally */
+  margin: 70px -40px 80px 0px; /* Auto margin for centering */
+}
+.gallery-paragraph{
+  font-size: 1rem;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-transform: uppercase;
+  font-style:unset;
+  text-align: center; /* Ensures text is centered horizontally */
+  margin: -70px -60px 80px 0px;
+  color: rgb(70, 70, 69);
+}
+/* Gallery Paragraph Styling */
+
+
+/* Image size adjustment */
+.gallery-image {
+  width: 100%; /* Makes the image stretch across the column */
+  height: auto;
+  object-fit: cover; 
+  margin: -80px 30px 80px 10px;/* Ensures image fits container */
+}
+
+/* Image Wrapper to add border and hover effect */
+
+
+/* Responsive styling for heading and paragraph */
+@media (max-width: 768px) {
+  .gallery-heading {
+    font-size: 2rem;
+  }
+  .gallery-paragraph {
+    font-size: 1rem;
+  }
+
+  /* Make images bigger on mobile */
+  .gallery-image {
+    width: 100%;
+    height: auto;
+  }
+}

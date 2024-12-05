@@ -1,0 +1,75 @@
+/* Footer Styling */
+.footer {
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+/* Top Section */
+.top-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(240, 105, 27);
+  padding: 10px 0;
+  border-radius: 70px;
+}
+.contact-item {
+  text-align: center;
+}
+.contact-item .icon {
+  font-size: 24px;
+  display: block;
+  margin-bottom: -10px;
+}
+/* Bottom Section */
+.bottom-section {
+  background-image: url('../img/images/footer-bg.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+    filter: brightness(90%);
+}
+.bottom-section .about,
+.bottom-section .subscribe,
+.bottom-section .contact-info,
+.bottom-section .opening-hours {
+ /* Add opacity to the background for better readability */
+  padding: 20px;
+  border-radius: 8px;
+}
+.bottom-section h3 {
+  border-bottom: 2px solid rgb(233, 126, 26);
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.bottom-section input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+}
+.bottom-section button {
+  background-color: rgb(255, 108, 10);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.social-icons span {
+  margin: 0 5px;
+  font-size: 20px;
+}
+.social-icons span:hover {
+  color: rgb(236, 111, 8);
+}
+/* Copyright Section */
+.copyright {
+  background-color: #000;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+}

@@ -1,0 +1,36 @@
+/* Review.css */
+.carousel-quote-circle {
+  width: 120px;
+  height: 120px;
+  background-color: #ff6f00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 60px; /* Adjusted for bigger quote */
+  margin-bottom: 20px;
+}
+.carousel-review-container {
+  max-width: 500px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: black;
+  padding: 10px;
+ 
+  border-radius: 5px;
+}
+.carousel-quote-circle {
+  width: 140px;
+  height: 140px;
+  background-color: white;
+  border: 4px solid #FF6F00; /* Orange border */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FF6F00; /* Orange color for the quote symbol */
+  font-size: 120px; /* Increased font size for the quote symbol */
+  margin-bottom: 20px;
+}
+/* Adjustments for Review Container */
