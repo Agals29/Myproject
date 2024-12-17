@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import "./Styles/Cart.css";
 import img1 from "./img/images/img-01.jpg";
 import drink2 from "./img/images/img-02.jpg";
 import burger from "./img/images/img-03.jpg";
@@ -12,6 +13,8 @@ import drink3 from "./img/images/img-09.jpg";
 
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [cart, setCart] = useState([]);
+  const [showCart, setShowCart] = useState(false);
 
   const menuItems = [
     {
@@ -88,14 +91,86 @@ const App = () => {
     },
   ];
 
-  // Filter items based on the selected category
   const filteredItems =
     selectedCategory === "All"
       ? menuItems
       : menuItems.filter((item) => item.category === selectedCategory);
 
+  // Add an item to the cart
+  const addToCart = (item) => {
+    const existingItem = cart.find((cartItem) => cartItem.id === item.id);
+    if (existingItem) {
+      setCart(
+        cart.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
+        )
+      );
+    } else {
+      setCart([...cart, { ...item, quantity: 1 }]);
+    }
+  };
+
+  // Remove an item from the cart
+  const removeFromCart = (item) => {
+    const existingItem = cart.find((cartItem) => cartItem.id === item.id);
+    if (existingItem.quantity > 1) {
+      setCart(
+        cart.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity - 1 }
+            : cartItem
+        )
+      );
+    } else {
+      setCart(cart.filter((cartItem) => cartItem.id !== item.id));
+    }
+  };
+
   return (
     <div className="container-fluid">
+      {/* Cart Icon */}
+      <div
+        className="cart-icon"
+        onClick={() => setShowCart(!showCart)}
+        style={{
+          cursor: "pointer",
+          position: "fixed",
+          top: "10px",
+          right: "10px",
+          zIndex: 1000,
+        }}
+      >
+        <span>🛒</span>
+        <span className="cart-count">
+          {cart.reduce((sum, item) => sum + item.quantity, 0)}
+        </span>
+      </div>
+
+      {/* Cart Modal */}
+      {showCart && (
+        <div className="cart-modal">
+          <h3>Your Cart</h3>
+          {cart.length === 0 ? (
+            <p>No items in the cart</p>
+          ) : (
+            cart.map((item) => (
+              <div key={item.id} className="cart-item">
+                <p>{item.title}</p>
+                <span>{item.price}</span>
+                <span>Qty: {item.quantity}</span>
+                <div>
+                  <button onClick={() => removeFromCart(item)}>-</button>
+                  <button onClick={() => addToCart(item)}>+</button>
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+      )}
+
+      {/* Sidebar and Content */}
       <div className="app">
         <div className="sidebar">
           <button
@@ -132,13 +207,12 @@ const App = () => {
           </button>
         </div>
 
-        <div className="content">
-          <h1 className="heading">Special Menu</h1>
-          <p className="description">
+        <div className="contents">
+          <h1 className="headings">Special Menu</h1>
+          <p className="descriptions">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry.
           </p>
-
           <div className="menu-grid">
             {filteredItems.map((item) => (
               <div className="menu-item" key={item.id}>
@@ -147,6 +221,12 @@ const App = () => {
                   <h3>{item.title}</h3>
                   {item.description && <p>{item.description}</p>}
                   <span className="price">{item.price}</span>
+                  <button
+                    className="add-to-cart-btn"
+                    onClick={() => addToCart(item)}
+                  >
+                    Add to Cart
+                  </button>
                 </div>
               </div>
             ))}

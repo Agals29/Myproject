@@ -10,15 +10,12 @@ const Navbar = () => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
   };
-
   const toggleDropdown = () => {
     setDropdown((prev) => !prev);
   };
-
   const toggleBlogDropdown = () => {
     setBlogDropdown((prev) => !prev);
   };
-
   return (
     <header className="navbar-container">
       <nav className="navbar">
@@ -82,6 +79,7 @@ const Navbar = () => {
           <li>
             <a href="/contact">CONTACT</a>
           </li>
+         
         </ul>
       </nav>
     </header>

@@ -6,6 +6,7 @@ import Three from "./Section3";
  import Photos from"./Photos";
 import Reviews from "./Reviews";
 import Email from "./Email";
+
 const FrontPage = () => {
   return (
     <div>
@@ -17,6 +18,7 @@ const FrontPage = () => {
       <Photos />
      <Reviews/>
      <Email/>
+    
     </div>
   );
 }

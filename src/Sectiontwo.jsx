@@ -13,10 +13,11 @@ const RestaurantWelcome = () => {
           </h1>
           <h3>Little Story</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed
-            convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante
-            sodales augue, eget lacinia lectus erat et sem.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. eros in
+            eleifend luctus, odio ante sodales augue, eget lacinia lectus erat
+            et sem. Pellentesque auctor suscipit feugiat. Ut at pellentesque
+            ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus,
+            odio ante sodales augue, eget lacinia lectus erat et sem.
           </p>
           <p>
             Sed semper orci sit amet porta placerat. Etiam quis finibus eros.

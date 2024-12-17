@@ -62,7 +62,7 @@
   padding: 25px;             /* Add padding for a larger icon */
   color: #fff;               /* White arrow color */
   width: 32px;
-  margin: 15px;
+  margin: 25px;
   height: 32px;
 }
 
@@ -106,10 +106,13 @@
   }
 
   .carousel-button {
-    padding: 8px 18px;
+    padding: 8px 14px;
     font-size: 1rem;
-    margin-top: 8px;
+    margin-top: 9px;
     display: inline-block; /* Inline block to keep it centered */
+    width:145px;
+    margin-bottom: 2px;
+    align-items: center;
   }
 
   .carousel-container .carousel-control-prev-icon,
@@ -173,8 +176,8 @@ width:100%;
 }
 
 .description {
-  font-size: 1em;
-  color: #666;
+  font-size: 1.5em;
+  color: #050505;
   line-height: 1.6;
   margin-bottom: 15px;
 }
@@ -237,74 +240,100 @@ width:100%;
   padding: 8px;
   cursor: pointer;
 }
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
   .restaurant-section {
-    display: block; /* Stacks content vertically */
-    padding: 20px;
-    height: auto; /* Adjust height to fit content */
-    background-size: cover;
+    flex-direction: column;
+    padding: 40px;
+    height: auto; /* Allow height to adjust dynamically */
   }
 
-  .content-left {
-    max-width: 100%; /* Full width on small screens */
-    padding-right: 0;
-    text-align: center; /* Center-align text for better readability */
+  .content-left, 
+  .content-right {
+    max-width: 100%;
+    padding: 0;
   }
 
   .content-left h1 {
-    font-size: 1.3em; /* Smaller font size for headings */
-    color: #333;
-  }
-
-  .sub-heading {
-    font-size: 0.9em; /* Slightly smaller sub-heading */
-    margin-top: 5px;
+    font-size: 2em; /* Adjust heading size */
   }
 
   .description {
-    font-size: 0.7em;
-    color: #666;
-    line-height: 1.2;
-    margin-bottom: 10px;
+    font-size: 1.2em; /* Adjust font size */
+  }
+
+  .pizza-image {
+    width: 400px; /* Adjust image size */
+    height: auto;
+    position: relative;
+    margin: 20px auto;
+  }
+
+  
+}
+
+@media (max-width: 740px) {
+  .restaurant-section {
+    padding: 30px;
+  }
+
+  .content-left h1 {
+    font-size: 1.8em;
+  }
+
+  .description {
+    font-size: 1em;
   }
 
   .reservation-btn {
     padding: 10px 20px;
     font-size: 0.9em;
-    margin-top: 7px;
-  }
-
-  .content-right {
-    max-width: 100%;
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    height: auto; /* Adjust height to fit content */
-    background-color: transparent; /* Remove color background on small screens */
   }
 
   .pizza-image {
-    position: static; /* Inline positioning for proper flow */
-    width: 350px; /* Adjusted width for smaller screens */
-    height: auto; /* Maintain aspect ratio */
-    margin:9px 0px 0px 460px; /* Center the image */
-  }
-
-  .restaurant-image {
-    width: 100%;
+    width: 350px; /* Slightly smaller for 740px */
     height: auto;
-    margin-top: 10px;
-    border-width: 3px; /* Smaller border */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
   }
 
-  .send-icon {
-    position: static; /* Inline positioning */
-    margin: 20px auto 0;
-    width: 35px; /* Adjusted size for smaller screens */
-    height: 35px;
-  }
+ 
 }
+
+@media (max-width: 480px) {
+  .restaurant-section {
+    padding: 20px;
+    text-align: center; /* Center-align content for smaller screens */
+  }
+
+  .content-left {
+    padding: 0;
+    color: #000;
+  }
+
+  .content-left h1 {
+    font-size: 1.5em;
+  }
+
+  .description {
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: #000;
+  }
+
+  .reservation-btn {
+    padding: 7px 50px;
+    font-size: 0.8em;
+margin: 0px 0px 0px 8px;
+text-align: center;
+
+  }
+  .pizza-image {
+    width: 300px; /* Adjust width for smaller screens */
+    height: 360px;
+    margin: 60px 0px 0px 58px;
+    position: relative;
+  } 
+}
+
 
 
 /* styles.css */
@@ -344,7 +373,7 @@ app {
   background-position: center;
   margin-bottom: 250px;
   background-attachment: fixed;
-  padding: 70px 0px;
+  padding: 90px 0px;
   text-align: center;
   color: white;
   width: 100%; /* Use a percentage for responsiveness */
@@ -372,6 +401,7 @@ app {
   .quote-section {
     padding: 50px 20px; /* Adjust padding for smaller screens */
     background-attachment: scroll; /* Avoid fixed background for mobile */
+     margin-bottom: 25px;
   }
 
   .quote p {
@@ -386,38 +416,29 @@ app {
 
 @media (max-width: 480px) {
   .quote-section {
-    padding: 40px 10px;
+    padding: 50px 10px;
   }
 
   .quote p {
-    font-size: 1.2rem;
-    line-height: 1.4em;
+    font-size: 0.9rem;
+    line-height: 1em;
   }
 
   .quote h3 {
-    font-size: 0.5rem;
+    font-size: 0.3rem;
   }
 }
-
-
-
-
-/* Basic styling */
-/* Basic styling */
-
-/* General App styles */
 .app {
   display: flex;
-  min-height: 100vh;
+  min-height: 50vh;
 }
 
 .sidebar {
   width: 300px;
   padding: 0px;
- 
   position: sticky;
   top: 0px;
-  margin: 20px 0px 0px 150px;
+  margin: -70px 0px 0px 130px;
 }
 
 .category-btn {
@@ -435,20 +456,20 @@ app {
 
 .category-btn.active,
 .category-btn:hover {
-  background-color: #ff6600;
+  background-color: #d65106;
   color: rgb(245, 241, 241);
   width: 150px;
 }
 
-.content {
+.contents {
   flex: 1;
   text-align: center;
   margin: -80px 20px 0px -90px;
 }
 
-.heading {
-  font-size: 50px;
-  margin: -90px 20px;
+.headings {
+  font-size: 40px;
+  margin: -90px 60px 0px 0px;
   padding: 0px;
   color: #000;
 }
@@ -505,65 +526,55 @@ app {
   opacity: 1;
   padding: 15px;
   width: 269px;
-  margin: 10px 0px 9px 14px;
+  margin: 10px 0px 9px 18px;
 }
 
 .price {
   font-weight: bold;
 }
-
-/* Media Query for 480px */
 @media (max-width: 480px) {
   .app {
-    flex-direction: column; /* Stack sidebar and content vertically */
+    flex-direction: column; /* Stack items vertically */
   }
-
   .sidebar {
-    width: 100%; /* Full width for sidebar */
-    margin: 10px 0; /* Adjust margins */
-    text-align: center; /* Center-align sidebar content */
+    width: 100%; /* Make sidebar full-width */
+    margin: 0; /* Remove margin */
+    position: relative; /* Adjust positioning */
   }
-
   .category-btn {
-    font-size: 0.9rem; /* Smaller font for buttons */
-    padding: 8px;
-    margin-bottom: 5px;
+    font-size: 0.9rem; /* Smaller font size */
+    padding: 8px; /* Less padding */
   }
-
-  .content {
-    margin: 10px 0; /* Adjust content margin */
+  .contents {
+    margin: 20px 0; /* Adjust margin */
   }
-
-  .heading {
-    font-size: 24px; /* Smaller heading size */
-    margin: 10px 0; /* Reduce margin */
+  .headings {
+    font-size: 30px; /* Smaller font size for headings */
+    margin: 0 20px; /* Adjust margin */
   }
-
   .description {
-    font-size: 14px; /* Smaller description text */
-    margin: 10px; /* Reduce margin */
+    font-size: 16px; /* Smaller font size for description */
+    margin: 20px; /* Adjust margin */
   }
-
   .menu-grid {
-    grid-template-columns: 1fr; /* Single-column grid */
-    gap: 15px; /* Adjust gap between items */
+    grid-template-columns: 1fr; /* Stack menu items in a single column */
+    gap: 15px; /* Adjust gap */
   }
-
-  .menu-item {
-    margin: 0 auto; /* Center menu items */
-    width: 90%; /* Adjust width to fit screen */
-  }
-
   .menu-image {
-    width: 268; /* Full width for images */
-    height: 140px; /* Adjust height to maintain aspect ratio */
-    margin: 0; /* Remove custom margins */
+    width: 100%; /* Make images full-width */
+    height: auto; /* Adjust height to maintain aspect ratio */
+    margin: 0; /* Remove margins */
   }
-
+  .menu-item {
+    margin: 0; /* Adjust margin */
+  }
   .menu-details-overlay {
-    width: 100%; /* Full width for overlay */
+    padding: 10px; /* Adjust padding */
     height: auto; /* Adjust height */
   }
 }
+/* Prevent horizontal overflow */
+body {
+  overflow-x: hidden;
+}
 
-/* App.css */

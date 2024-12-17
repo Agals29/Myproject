@@ -14,12 +14,13 @@
 }
 .gallery-paragraph{
   font-size: 1rem;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family:cursive;
   text-transform: uppercase;
   font-style:unset;
+
   text-align: center; /* Ensures text is centered horizontally */
   margin: -70px -60px 80px 0px;
-  color: rgb(70, 70, 69);
+  color: rgb(63, 63, 62);
 }
 /* Gallery Paragraph Styling */
 
@@ -28,8 +29,22 @@
 .gallery-image {
   width: 100%; /* Makes the image stretch across the column */
   height: auto;
+   border: 5px solid #ff4500;
   object-fit: cover; 
   margin: -80px 30px 80px 10px;/* Ensures image fits container */
+   border-radius: 8px; /* Optional: Adds rounded corners */
+  transition: transform 0.3s ease;
+}
+.gallery-image:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Grey shadow */
+  border: none; /* Remove the border on hover */
+}
+
+/* Clicked effect: Adds shadow and removes border */
+.gallery-image.clicked {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Grey shadow */
+  border: none; /* Remove the border */
 }
 
 /* Image Wrapper to add border and hover effect */
@@ -39,14 +54,36 @@
 @media (max-width: 768px) {
   .gallery-heading {
     font-size: 2rem;
+    margin: 20px;
   }
   .gallery-paragraph {
-    font-size: 1rem;
+    font-size: 1.4rem;
+    line-height: 1em;
+    width:250px;
+    margin: 20px;
   }
 
   /* Make images bigger on mobile */
   .gallery-image {
-    width: 100%;
-    height: auto;
+    width: 370px;
+    height: 280px;
+  }
+   .gallery-image:hover {
+    transform: scale(1.02); /* Slight zoom effect for smaller screens */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15); /* Slightly lighter shadow */
+    border: none; /* Remove the border on hover */
+  }
+
+  .gallery-image.clicked {
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15); /* Consistent shadow with hover */
+    border: none; /* Ensure no border */
+  }
+
+  /* Optionally, reduce image size for better layout */
+  .gallery-image {
+    width: 90%; /* Adjust width to fit smaller screens */
+    margin: 10px auto; /* Center the image */
+    border-radius: 5px; /* Slightly reduce rounded corners */
   }
 }
+

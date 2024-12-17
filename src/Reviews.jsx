@@ -8,7 +8,7 @@ const CustomerReviews = () => {
       name: "Steve Fonsi",
       designation: "Web Designer",
       review:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante.",
+        "Lorem ipsum dolor sit amet, consectetur  adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante.",
       image: "https://via.placeholder.com/100",
     },
     {
@@ -39,11 +39,11 @@ const CustomerReviews = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
+        minHeight: "100vh",
         textAlign: "center",
-        backgroundColor: "#f9f9f9",
+        backgroundColor: "#fff", // Full container background set to white
         padding: "20px",
-        
+        width: "100%", // Full width
       }}
     >
       <div style={{ maxWidth: "700px", width: "100%", position: "relative" }}>
@@ -67,7 +67,7 @@ const CustomerReviews = () => {
           {reviews.map((review, idx) => (
             <Carousel.Item key={idx}>
               <div className="d-flex flex-column align-items-center">
-                <div className="carousel-quote-circle">“</div>
+                <div className="carousel-quote-circle"></div>
                 <h5
                   className="text-warning mb-0"
                   style={{ fontSize: "20px", color: "#333" }}
@@ -77,14 +77,23 @@ const CustomerReviews = () => {
                 <p
                   className="text-muted"
                   style={{
-                    fontSize: "16px",
+                    fontSize: "30px",
                     color: "#555",
-                    marginBottom: "10px",
+                    marginBottom: "20px",
                   }}
                 >
                   {review.designation}
                 </p>
-                <p className="carousel-review-container">{review.review}</p>
+                <p
+                  className="carousel-review-container"
+                  style={{
+                    fontSize: "17px",
+                    color: "#111",
+                    marginBottom: "10px",
+                  }}
+                >
+                  {review.review}
+                </p>
               </div>
             </Carousel.Item>
           ))}
