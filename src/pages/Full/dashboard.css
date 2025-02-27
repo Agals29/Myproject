@@ -1,0 +1,365 @@
+ .dashboard-title {
+     font-size: 2.2rem;
+     font-weight: bold;
+     margin: 0;
+ }
+
+ .image-admin-image {
+     border-radius: 50%;
+     margin-right: 8px;
+     color: #6D6D6D;
+ }
+
+ .admin-user-btn {
+     display: flex;
+     align-items: center;
+     gap: 0rem;
+     font-size: 1rem;
+     font-weight: 500;
+     color: #333;
+     border: none;
+     border-left: 1px solid gainsboro;
+     border-right: 1px solid gainsboro;
+     border-radius: 0px;
+ }
+
+ .admin-user-btn:hover {
+     border: none;
+     border-left: 1px solid #eee;
+     border-right: 1px solid gainsboro;
+ }
+
+
+ .logout {
+     font-size: 1rem;
+     font-weight: 500;
+     color: #6D6D6D;
+     display: flex;
+     align-items: center;
+     cursor: pointer;
+     transition: color 0.3s ease;
+ }
+
+ .logout-icon {
+     font-size: 1.2rem;
+     margin-right: 5px;
+ }
+
+ .logout:hover {
+     color: #007bff;
+ }
+
+ @media (max-width: 768px) {
+     .dashboard-title {
+         text-align: center;
+         margin-bottom: 10px;
+     }
+
+     .d-flex {
+         justify-content: center !important;
+     }
+ }
+
+ .header-section {
+     width: 100%;
+     height: 64px;
+     border: 1px solid gainsboro;
+ }
+
+ .navigation-title {
+     background-color: #19222E;
+     color: white;
+     padding: 8px 10px;
+     margin: 0 auto;
+ }
+
+ .column-left {
+     width: 19%;
+     background-color: #2b3642;
+ }
+
+ .col-for-menu {
+     width: 100%;
+ }
+
+ .drop-down-value {
+     border-bottom: 1px solid #2b3642;
+     list-style: none;
+     background-color: #2b3642;
+     padding: 6px 10px;
+     color: white;
+ }
+
+ .drop-down-value:hover {
+     background-color: #545454;
+ }
+
+ .icon-right-1 {
+     position: relative;
+     left: 140px;
+     width: 15px;
+     height: 15px;
+ }
+
+ .icon-right-2 {
+     position: relative;
+     left: 160px;
+ }
+
+ .icon-right-3 {
+     position: relative;
+     left: 143px;
+ }
+
+ .icon-right-4 {
+     position: relative;
+     left: 154px;
+ }
+
+ .dropdown-link {
+     list-style: none;
+     text-decoration: none;
+     color: rgb(197, 193, 193);
+     display: block;
+     padding: 10px 20px;
+     background-color: #1f2934;
+ }
+
+ .dropdown-link:hover {
+     background-color: #2b3642;
+ }
+
+ .market-data {
+     width: 100%;
+     height: 100%;
+ }
+
+ .main-cart-1 {
+     width: 85%;
+     border-radius: 4px;
+ }
+
+ .dashboard-data {
+     font-size: 30px;
+     font-weight: 100;
+     /* position: relative;
+    top: 20px; */
+     display: inline-block;
+ }
+
+ .dashboard-value {
+     width: 100%;
+     display: inline-block;
+     
+ }
+
+ .home-to-dashboard {
+     display: inline-block;
+ }
+
+ .dash-main-p {
+     display: inline-block;
+ }
+
+ .dash-main-p2 {
+     display: inline-block;
+ }
+
+ .dashvalue-2 {
+     position: relative;
+     top: 13px;
+ }
+
+ .dash-main-icon {
+     width: 10px;
+     height: 10px;
+ }
+
+ .btn-for-button {
+     position: relative;
+     bottom: 30px;
+     border-radius: 3px;
+ }
+
+ .settings-admin {
+     border-radius: 4px;
+     padding: 6px 10px;
+     background-color: #54b7d3;
+     border: none;
+     color: white;
+ }
+
+ .main-cart-1 {
+      border: 1px solid black; 
+     width: 96%;
+ }
+
+ .cart-1 {
+     padding: 5px 8px;
+     text-transform: uppercase;
+     color: #FFF;
+     text-shadow: 0 -1px 0 rgba(0, 0, 0, .4);
+     background-color: #57a1d6;
+     border-radius: 3px 3px 0px 0px;
+ }
+
+ .cart-2 {
+     background-color: #1b80c2;
+     color: #FFFFFF;
+     width: 100%;
+     height: 100px;
+     padding: 23px 10px;
+ }
+
+ .cart-3 {
+     background-color: #57a1d6;
+     color: white;
+     border-radius: 0px 0px 3px 3px;
+     padding: 2px 2px;
+     height: 30px;
+ }
+
+ .span-number {
+     float: right;
+ }
+
+ .icon-cart-1 {
+     width: 50px;
+     height: 50px;
+     opacity: 0.3;
+ }
+
+ .cart-2:hover .icon-cart-1 {
+     opacity: 100;
+     transition: all 1s;
+ }
+
+ .h2-numbers {
+     float: right;
+     font-size: 2.7rem;
+     font-weight: 400;
+ }
+
+
+ .map-main {
+     position: relative;
+     top: 10px;
+     border: 1px solid gainsboro;
+     width: 486px;
+     padding: 6px 1px 1px 1px;
+ }
+
+ .world-map-world {
+     width: 486px;
+     height: 300px;
+      border: 1px solid gainsboro; 
+ }
+
+ .admin-map-h5 {
+    display: inline-block;
+ }
+
+.world-map-world {
+    border: 1px solid gainsboro;
+    position: relative;
+    top: 10px;
+}
+
+.col-for-dropdown {
+    height: 300px;
+}
+
+/* Default styles (applies to all screen sizes) */
+
+/* For small devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .header-section {
+    padding: 10px;
+  }
+
+  .logo-admin-play {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .logout {
+    font-size: 12px;
+  }
+
+  .column-left {
+    display: none; /* Hide sidebar */
+  }
+
+  .market-data {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .dashboard-data {
+    font-size: 18px;
+  }
+
+  .main-cart-1,
+  .main-cart-2,
+  .main-cart-3,
+  .main-cart-4 {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* For tablets (max-width: 760px) */
+@media (max-width: 760px) {
+  .column-left {
+    width: 30%;
+  }
+
+  .market-data {
+    width: 70%;
+  }
+
+  .dashboard-data {
+    font-size: 20px;
+  }
+
+  .navigation-menu {
+    font-size: 14px;
+  }
+
+  .main-cart-1,
+  .main-cart-2,
+  .main-cart-3,
+  .main-cart-4 {
+    width: 48%;
+  }
+}
+
+/* For larger tablets and small desktops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .column-left {
+    width: 25%;
+  }
+
+  .market-data {
+    width: 75%;
+  }
+
+  .dashboard-data {
+    font-size: 22px;
+  }
+
+  .navigation-title {
+    font-size: 16px;
+  }
+
+  .navigation-menu {
+    font-size: 15px;
+  }
+
+  .main-cart-1,
+  .main-cart-2,
+  .main-cart-3,
+  .main-cart-4 {
+    width: 45%;
+  }
+}

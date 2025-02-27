@@ -70,6 +70,12 @@
 .carousel-container .carousel-control-next {
   width: auto;               /* Prevents the control from covering the entire side */
 }
+/* Styling for the Login Button */
+/* LoginPage.css */
+
+
+
+
 
 @media (max-width: 480px) {
   .carousel-container {
@@ -106,13 +112,14 @@
   }
 
   .carousel-button {
-    padding: 8px 14px;
+    padding: 2px 30px;
     font-size: 1rem;
     margin-top: 9px;
     display: inline-block; /* Inline block to keep it centered */
     width:145px;
     margin-bottom: 2px;
     align-items: center;
+    height:50px;
   }
 
   .carousel-container .carousel-control-prev-icon,
@@ -176,7 +183,7 @@ width:100%;
 }
 
 .description {
-  font-size: 1.5em;
+  font-size: 1.8em;
   color: #050505;
   line-height: 1.6;
   margin-bottom: 15px;
@@ -229,17 +236,7 @@ width:100%;
   
 }
 
-.send-icon {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  background-color: #f57c00;
-  border-radius: 50%;
-  padding: 8px;
-  cursor: pointer;
-}
+
 @media (max-width: 1024px) {
   .restaurant-section {
     flex-direction: column;
@@ -320,10 +317,10 @@ width:100%;
   }
 
   .reservation-btn {
-    padding: 7px 50px;
-    font-size: 0.8em;
-margin: 0px 0px 0px 8px;
-text-align: center;
+     padding: 2px 30px;
+    font-size: 14px;
+    width:150px;
+    height:50px;
 
   }
   .pizza-image {
@@ -392,8 +389,10 @@ app {
 }
 
 .quote h3 {
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   font-weight: bold;
+  margin:10px 0px;
+ 
 }
 
 /* Responsive styles */
@@ -416,16 +415,17 @@ app {
 
 @media (max-width: 480px) {
   .quote-section {
-    padding: 50px 10px;
+    padding: 90px 10px;
+    margin-bottom: 10px;
   }
 
   .quote p {
-    font-size: 0.9rem;
-    line-height: 1em;
+    font-size: 0.8rem;
+    line-height: 2em;
   }
 
   .quote h3 {
-    font-size: 0.3rem;
+    font-size: 1rem;
   }
 }
 .app {
@@ -515,11 +515,12 @@ app {
   border-top: 2px dotted rgb(17, 17, 17);
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 15px;
   height: 193px;
   opacity: 0;
   transition: opacity 0.3s;
- margin-right: 20px;
+ margin-right: 30px;
+
 }
 
 .menu-item:hover .menu-details-overlay {
@@ -554,27 +555,41 @@ app {
   }
   .description {
     font-size: 16px; /* Smaller font size for description */
-    margin: 20px; /* Adjust margin */
+    margin: 20px;
+     /* Adjust margin */
   }
   .menu-grid {
     grid-template-columns: 1fr; /* Stack menu items in a single column */
     gap: 15px; /* Adjust gap */
   }
   .menu-image {
-    width: 100%; /* Make images full-width */
-    height: auto; /* Adjust height to maintain aspect ratio */
+    width: 250px; /* Make images full-width */
+    height: 200px; /* Adjust height to maintain aspect ratio */
     margin: 0; /* Remove margins */
   }
   .menu-item {
-    margin: 0; /* Adjust margin */
+    margin: 10px -20px; /* Adjust margin */
+   
   }
   .menu-details-overlay {
-    padding: 10px; /* Adjust padding */
-    height: auto; /* Adjust height */
+    padding: 11px; /* Adjust padding */
+    height: auto;
+    width: 250px;
+    margin:20px 20px 0px 30px;
   }
+  .menu-item:hover .menu-details-overlay {
+  opacity: 1;
+  padding: 15px;
+  width: 250px;
+  margin: 10px 0px 2px 35px;
+}
 }
 /* Prevent horizontal overflow */
 body {
   overflow-x: hidden;
 }
 
+/* In your global CSS file */
+.dashboard-page .navbar {
+  display: none;
+}

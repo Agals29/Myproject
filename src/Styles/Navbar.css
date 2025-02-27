@@ -8,7 +8,6 @@
   border-bottom-left-radius: 100px; /* Add curve to bottom-left */
   border-bottom-right-radius: 100px; /* Add curve to bottom-right */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
   position: fixed;
 }
 .navbar-brand h1 {
@@ -52,6 +51,7 @@ img {
 }
 .navbar-brand img {
   width: 145px;
+  margin-left: 20px;
 }
 /* Move the toggle button to the right */
 .navbar-toggler {
@@ -92,19 +92,17 @@ img {
   background-color: #fff;
   padding: 14px 40px;
    position: fixed;
-}
 
+}
 /* Navbar links */
 .nav-links {
   list-style-type: none;
   display: flex;
   gap: 20px;
 }
-
 .nav-links li {
   display: inline-block;
 }
-
 .nav-links a {
   text-decoration: none;
   color: #333;
@@ -241,6 +239,7 @@ img {
   background: none;
   border: none;
   cursor: pointer;
+  
 }
 
 
@@ -345,9 +344,9 @@ width:100px;
     display: block;
     position: absolute;
     top: 19px;
-    right: 20px;
+    right:-130px;
     color: #333;
-    margin:0px 20px;
+    margin:20px 30px;
   }
 
   .navbar-brand {
@@ -370,7 +369,10 @@ width:100px;
   }
 
   .dropdown-menu a {
-    font-size: 12px;
+    font-size: 8px;
     padding: 5px;
+  }
+  .dropdown{
+    font-size: 13.5px;
   }
 }

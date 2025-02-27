@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -7,7 +7,6 @@ import "./App.css";
 import Navbar from "./Homes";
 import FrontPage from "./FrontPage";
 // Additional page components for routing
-// import Home from "./pages/Full/Home";
 import About from "./pages/Full/About";
 import Blog from "./pages/Full/Blog";
 import BlogSingle from "./pages/Full/BlogSingle";
@@ -16,13 +15,21 @@ import Gallery from "./pages/Full/Gallery";
 import Menu from "./pages/Full/Menu";
 import Reservation from "./pages/Full/Reservation";
 import Stuff from "./pages/Full/Stuff";
+import Admin from "./pages/Full/Admin"; // Admin route
+import { Dashboard } from "./pages/Full/Dashboard";
+import { Categories } from "./pages/Full/categories";
+import { Products } from "./pages/Full/products";
+
 
 function App() {
+  const location = useLocation();
+
+  // Hide Navbar for /admin, /dashboard, /categories, and /products
+  const hideNavbarRoutes = ["/admin", "/dashboard", "/categories", "/products"];
+
   return (
     <div className="app-container">
-      {/* Custom class name for outer div */}
-
-      <Navbar />
+      {!hideNavbarRoutes.includes(location.pathname) && <Navbar />}
 
       <Routes>
         {/* Routes for pages */}
@@ -36,8 +43,13 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog-single" element={<BlogSingle />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/admin" element={<Admin />} />
+        {/* Dashboard, Categories, and Products pages */}
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/products" element={<Products />} />
+       
       </Routes>
- 
     </div>
   );
 }

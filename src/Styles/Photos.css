@@ -67,6 +67,7 @@
   .gallery-image {
     width: 370px;
     height: 280px;
+   
   }
    .gallery-image:hover {
     transform: scale(1.02); /* Slight zoom effect for smaller screens */
@@ -82,7 +83,7 @@
   /* Optionally, reduce image size for better layout */
   .gallery-image {
     width: 90%; /* Adjust width to fit smaller screens */
-    margin: 10px auto; /* Center the image */
+    margin: 10px 10px; /* Center the image */
     border-radius: 5px; /* Slightly reduce rounded corners */
   }
 }

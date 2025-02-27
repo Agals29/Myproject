@@ -6,18 +6,23 @@ import Three from "./Section3";
  import Photos from"./Photos";
 import Reviews from "./Reviews";
 import Email from "./Email";
+import OrdersPage from './Orders';
+
 
 const FrontPage = () => {
+  
   return (
     <div>
         
       <Tem />
      <Sec />
       <Three />
-      <Orders />
+      {/* <Orders /> */}
+      <OrdersPage />
       <Photos />
      <Reviews/>
      <Email/>
+     <card />
     
     </div>
   );

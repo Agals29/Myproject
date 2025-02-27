@@ -36,9 +36,9 @@ function App() {
       <Row className="justify-content-center text-center my-5">
         <Col xs={12} md={8}>
           <div className="content-area p-4 rounded">
+            <h1>Special Menu</h1>
             <p>
-              This is a simple design with a background color inside the content
-              area.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
             </p>
           </div>
         </Col>
@@ -53,5 +53,4 @@ function App() {
     </Container>
   );
 }
-
 export default App;

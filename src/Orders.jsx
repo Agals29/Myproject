@@ -1,108 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import "./Styles/Cart.css";
-import img1 from "./img/images/img-01.jpg";
-import drink2 from "./img/images/img-02.jpg";
-import burger from "./img/images/img-03.jpg";
-import salad from "./img/images/img-04.jpg";
-import fish from "./img/images/img-05.jpg";
-import steak from "./img/images/img-06.jpg";
-import pasta from "./img/images/img-07.jpg";
-import chicken from "./img/images/img-08.jpg";
-import drink3 from "./img/images/img-09.jpg";
 
-const App = () => {
+const OrdersPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
+  const [showOrderConfirmation, setShowOrderConfirmation] = useState(false);
+  const [orders, setOrders] = useState([]);
+  const [products, setProducts] = useState([]);
 
-  const menuItems = [
-    {
-      id: 1,
-      category: "Drinks",
-      title: "Special Drinks 1",
-      description: "Sed id magna vitae eros sagittis euismod.",
-      price: "$7.79",
-      image: img1,
-    },
-    {
-      id: 2,
-      category: "Drinks",
-      title: "Special Drinks 2",
-      description: "Sed id magna vitae eros sagittis euismod.",
-      price: "$5.99",
-      image: drink2,
-    },
-    {
-      id: 3,
-      category: "Lunch",
-      title: "Burger",
-      price: "$9.99",
-      description: "Sed id magna vitae eros sagittis euismod.",
-      image: burger,
-    },
-    {
-      id: 4,
-      category: "Lunch",
-      title: "Salad",
-      description: "Sed id magna vitae eros sagittis euismod.",
-      price: "$6.50",
-      image: salad,
-    },
-    {
-      id: 5,
-      category: "Dinner",
-      title: "Fish",
-      description: "Sed id magna vitae eros sagittis euismod.",
-      price: "$12.99",
-      image: fish,
-    },
-    {
-      id: 6,
-      category: "Lunch",
-      title: "Steak",
-      description: "Sed id magna vitae eros sagittis euismod.",
-      price: "$15.99",
-      image: steak,
-    },
-    {
-      id: 7,
-      category: "Dinner",
-      title: "Pasta",
-      description: "Sed id magna vitae eros sagittis euismod.",
-      price: "$11.50",
-      image: pasta,
-    },
-    {
-      id: 8,
-      category: "Dinner",
-      title: "Chicken",
-      description: "Sed id magna vitae eros sagittis euismod.",
-      price: "$10.50",
-      image: chicken,
-    },
-    {
-      id: 9,
-      category: "Drinks",
-      title: "Special Drinks 3",
-      description: "Sed id magna vitae eros sagittis euismod.",
-      price: "$8.00",
-      image: drink3,
-    },
-  ];
+  // Fetch products from the backend
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/api/products");
+      const data = await response.json();
+      setProducts(data);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  };
+
+  // Filter products based on selected category
   const filteredItems =
     selectedCategory === "All"
-      ? menuItems
-      : menuItems.filter((item) => item.category === selectedCategory);
+      ? products
+      : products.filter((item) => item.mainCategory === selectedCategory);
 
   // Add an item to the cart
   const addToCart = (item) => {
-    const existingItem = cart.find((cartItem) => cartItem.id === item.id);
+    if (item.status === "Out of Stock") {
+      alert("This item is out of stock!");
+      return;
+    }
+    const existingItem = cart.find((cartItem) => cartItem._id === item._id);
     if (existingItem) {
       setCart(
         cart.map((cartItem) =>
-          cartItem.id === item.id
+          cartItem._id === item._id
             ? { ...cartItem, quantity: cartItem.quantity + 1 }
             : cartItem
         )
@@ -114,17 +53,50 @@ const App = () => {
 
   // Remove an item from the cart
   const removeFromCart = (item) => {
-    const existingItem = cart.find((cartItem) => cartItem.id === item.id);
+    const existingItem = cart.find((cartItem) => cartItem._id === item._id);
     if (existingItem.quantity > 1) {
       setCart(
         cart.map((cartItem) =>
-          cartItem.id === item.id
+          cartItem._id === item._id
             ? { ...cartItem, quantity: cartItem.quantity - 1 }
             : cartItem
         )
       );
     } else {
-      setCart(cart.filter((cartItem) => cartItem.id !== item.id));
+      setCart(cart.filter((cartItem) => cartItem._id !== item._id));
+    }
+  };
+
+  // Handle order confirmation
+  const handleConfirmOrder = async () => {
+    try {
+      const total = cart
+        .reduce(
+          (sum, item) =>
+            sum + parseFloat(item.price.replace("$", "")) * item.quantity,
+          0
+        )
+        .toFixed(2);
+
+      const response = await fetch("http://localhost:5000/api/orders", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ cart, total }),
+      });
+
+      if (response.ok) {
+        alert("Order confirmed! Thank you for your purchase.");
+        setCart([]); // Clear the cart
+        setShowOrderConfirmation(false); // Hide the order confirmation section
+        setShowCart(false); // Close the cart modal
+      } else {
+        alert("Failed to confirm order. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error confirming order:", error);
+      alert("An error occurred. Please try again.");
     }
   };
 
@@ -155,18 +127,79 @@ const App = () => {
           {cart.length === 0 ? (
             <p>No items in the cart</p>
           ) : (
-            cart.map((item) => (
-              <div key={item.id} className="cart-item">
-                <p>{item.title}</p>
-                <span>{item.price}</span>
-                <span>Qty: {item.quantity}</span>
-                <div>
-                  <button onClick={() => removeFromCart(item)}>-</button>
-                  <button onClick={() => addToCart(item)}>+</button>
+            <>
+              {cart.map((item) => (
+                <div key={item._id} className="cart-item">
+                  <p>{item.mainCategory}</p>
+                  <span>${item.price}</span>
+                  <span>Qty: {item.quantity}</span>
+                  <div className="quantity-buttons">
+                    <button
+                      onClick={() => removeFromCart(item)}
+                      className="cart-btn"
+                    >
+                      -
+                    </button>
+                    <button
+                      onClick={() => addToCart(item)}
+                      className="cart-btn"
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
+              ))}
+              <div className="cart-total">
+                <strong>Total:</strong> $
+                {cart
+                  .reduce(
+                    (sum, item) => sum + parseFloat(item.price) * item.quantity,
+                    0
+                  )
+                  .toFixed(2)}
               </div>
-            ))
+
+              {/* Proceed Button */}
+              <button
+                onClick={() => setShowOrderConfirmation(true)}
+                className="proceed-btn"
+              >
+                Proceed
+              </button>
+            </>
           )}
+        </div>
+      )}
+
+      {/* Order Confirmation Section */}
+      {showOrderConfirmation && (
+        <div className="order-confirmation-modal">
+          <h3>Confirm Your Order</h3>
+          {cart.map((item) => (
+            <div key={item._id} className="order-item">
+              <p>Product: {item.mainCategory}</p>
+              <p>Price: ${item.price}</p>
+              <p>Quantity: {item.quantity}</p>
+            </div>
+          ))}
+          <div className="order-total">
+            <strong>Total:</strong> $
+            {cart
+              .reduce(
+                (sum, item) => sum + parseFloat(item.price) * item.quantity,
+                0
+              )
+              .toFixed(2)}
+          </div>
+          <button onClick={handleConfirmOrder} className="confirm-order-btn">
+            Confirm Order
+          </button>
+          <button
+            onClick={() => setShowOrderConfirmation(false)}
+            className="cancel-order-btn"
+          >
+            Cancel
+          </button>
         </div>
       )}
 
@@ -215,17 +248,31 @@ const App = () => {
           </p>
           <div className="menu-grid">
             {filteredItems.map((item) => (
-              <div className="menu-item" key={item.id}>
-                <img src={item.image} alt={item.title} className="menu-image" />
+              <div className="menu-item" key={item._id}>
+                <img
+                  src={`http://localhost:5000/${item.image}`}
+                  alt={item.mainCategory}
+                  className="menu-image"
+                />
                 <div className="menu-details-overlay">
-                  <h3>{item.title}</h3>
-                  {item.description && <p>{item.description}</p>}
-                  <span className="price">{item.price}</span>
+                  <h3>{item.mainCategory}</h3>
+                  {item.subCategory && <p>{item.subCategory}</p>}
+                  <span className="price">${item.price}</span>
+                  <p
+                    className={`status ${
+                      item.status === "Available" ? "available" : "out-of-stock"
+                    }`}
+                  >
+                    {item.status}
+                  </p>
                   <button
                     className="add-to-cart-btn"
                     onClick={() => addToCart(item)}
+                    disabled={item.status === "Out of Stock"}
                   >
-                    Add to Cart
+                    {item.status === "Out of Stock"
+                      ? "Out of Stock"
+                      : "Add to Cart"}
                   </button>
                 </div>
               </div>
@@ -237,4 +284,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default OrdersPage;

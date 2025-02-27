@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Orders from "../../Orders"; // Orders Component
+import Email from "../../Email";
 import img from "../Full/all-bg.jpg"; // Path to the background image
 
 const App = () => {
@@ -50,17 +51,22 @@ const App = () => {
       <Row className="justify-content-center text-center my-5">
         <Col xs={12} md={8}>
           <div className="content-area p-4 rounded">
-            <p>
-              
-            </p>
+            <p>{/* Add content here if needed */}</p>
           </div>
         </Col>
       </Row>
+
       {/* Orders Section */}
-      <Row>
+      
+        <Row style={{ marginTop: "100px" }}>
+
+        {" "}
+        {/* Add margin-top class for spacing */}
         <Col>
           <Orders />
+           <Email/>
         </Col>
+       
       </Row>
     </Container>
   );

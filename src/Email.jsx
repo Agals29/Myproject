@@ -88,8 +88,7 @@ const Footer = () => {
       {/* Copyright Section */}
       <div className="copyright">
         <p>
-          All Rights Reserved. © 2024 Live Dinner Restaurant Design By: full stack web
-          developer
+          All Rights Reserved. © 2024 Live Dinner Restaurant Design By: Designed by S Agalya full stack developer
         </p>
       </div>
     </footer>

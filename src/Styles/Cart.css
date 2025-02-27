@@ -2,15 +2,14 @@
   font-size: 1.5rem;
   
   margin: 20px 0px 0px 0px;
-  margin-right: 1200px;
-  background: white;
-  padding: 5px 10px;
-  border-radius: 50px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-right: 1070px;
+ margin-top:40px;
+
+ 
 }
 
 .cart-count {
-  background: red;
+  background: rgb(236, 125, 22);
   color: white;
   border-radius: 50%;
   padding: 3px 7px;
@@ -20,14 +19,16 @@
 
 .cart-modal {
   position: fixed;
+  left: 10px;
+ border-radius: 20px;
   top: 50px;
-  right: 10px;
-  background: white;
-  border: 1px solid #ddd;
- 
+  background-color: rgb(250, 247, 242);
+ margin-top: 50px;
   padding: 20px;
   width: 300px;
   z-index: 1000;
+  margin-left: 20px;
+  
 }
 
 .cart-item {
@@ -36,16 +37,23 @@
   margin-bottom: 10px;
 }
 .add-to-cart-btn {
- 
-  color: rgb(24, 23, 23); /* White text */
-  border: none; /* Remove borders */
-  padding: 7px 10px; /* Add some padding */
+  background-color: rgb(224, 226, 228); /* Background color */
+  color: rgb(17, 16, 16); /* Text color */
+  border: 3px #0c0c0b; /* Double-line border */
+  padding: 8px 10px; /* Padding */
   border-radius: 5px; /* Rounded corners */
   font-size: 1rem; /* Font size */
   cursor: pointer; /* Pointer cursor on hover */
-  transition:  transform 0.2s ease; /* Smooth hover effect */
-  margin-bottom: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth effects */
+  margin-bottom: 20px; /* Space below */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.5); /* 3D effect */
+  margin-left: 12px;
 }
+
+.add-to-cart-btn:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
 
 .add-to-cart-btn:hover {
  
@@ -56,12 +64,81 @@
  /* Even darker green on click */
   transform: scale(1); /* Return to original size */
 }
+.cart-btn {
+  width: 40px; /* Increase width */
+  height: 40px; /* Increase height for symmetry */
+  font-size: 18px;
+  margin: 0 5px;
+  border: 1px solid #b7bff1;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  transition: all 0.2s ease;
+}
+
+.cart-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.cart-total {
+  margin-top: 15px;
+  font-size: 18px;
+  text-align: right;
+}
+
+.proceed-btn, .confirm-order-btn, .cancel-order-btn {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.proceed-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.confirm-order-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.cancel-order-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.order-confirmation-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+}
+
+.order-item {
+  margin-bottom: 10px;
+}
+
+.order-total {
+  font-size: 1.2em;
+  margin: 20px 0;
+}
+
+
+
 @media (max-width: 480px) {
-  .cart-icon {
+ .cart-icon {
     font-size: 1.2rem;
-    margin-right: 50px;
-    padding: 5px;
+    margin-right: 50px; /* Adjusted for smaller screens */
+    margin-top: 10px;
   }
+
 
   .cart-modal {
     width: 250px;
@@ -72,6 +149,7 @@
   .add-to-cart-btn {
     padding: 5px 8px;
     font-size: 0.9rem;
+    
   }
 }
 
@@ -79,8 +157,10 @@
 @media (max-width: 760px) {
   .cart-icon {
     font-size: 1.3rem;
-    margin-right: 100px;
+    margin-right: 50px; /* Balanced for mid-sized screens */
+    margin-top: 15px;
   }
+
 
   .cart-modal {
     width: 280px;
@@ -97,7 +177,9 @@
 @media (max-width: 1024px) {
   .cart-icon {
     font-size: 1.4rem;
-    margin-right: 200px;
+    margin-right: 70px; /* Scaled down for larger tablets or smaller desktops */
+    margin-top: 30px;
+   
   }
 
   .cart-modal {
@@ -106,7 +188,9 @@
   }
 
   .add-to-cart-btn {
-    padding: 7px 10px;
-    font-size: 1rem;
+    padding: 2px 4px;
+    font-size: 0.6rem;
+    line-height: 0.2rem;
+    width:100px;
   }
 }

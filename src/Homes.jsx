@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import img from "./img/images/logo.png";
 import "./Styles/Navbar.css";
 
+
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [dropdown, setDropdown] = useState(false);
@@ -78,6 +79,7 @@ const Navbar = () => {
 
           <li>
             <a href="/contact">CONTACT</a>
+            
           </li>
          
         </ul>

@@ -1,0 +1,146 @@
+/* Increase font size for "Administration" heading */
+.logo-admin-play {
+  font-size: 24px; /* Adjust size as needed */
+  font-weight: bold;
+  padding: 10px;
+  color: #333;
+}
+
+/* Ensure sidebar height is full */
+.column-left {
+  height: 100vh; /* Full height of viewport */
+  background-color: #343a40; /* Dark background for sidebar */
+  color: white;
+  padding: 20px;
+}
+
+.column-left .navigation-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #f8f9fa;
+}
+
+.navigation-menu {
+  list-style-type: none;
+}
+
+.navigation-menu .drop-down-value {
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.navigation-menu .drop-down-value.active,
+.navigation-menu .drop-down-value:hover {
+  background-color: #495057;
+  border-radius: 5px;
+}
+
+/* Adjust form and table layout */
+.category-form {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.category-list table {
+  background-color: white;
+}
+
+.category-list th,
+.category-list td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Pagination styling */
+.pagination {
+  justify-content: center;
+}
+
+.pagination .page-item .page-link {
+  color: #007bff;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+
+.category-container {
+  border: 2px solid #000;  /* Black border */
+  border-radius: 8px;      /* Rounded corners */
+  padding: 20px;           /* Inner spacing */
+  background-color: #f8f9fa; /* Light grey background */
+  margin-bottom: 20px;      /* Space below */
+}
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+    width: 10px;
+}
+.color{
+  border-color: black;
+}
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 5px;
+  }
+
+  /* Make table scrollable */
+  .table-container {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 500px;
+  }
+
+  /* Stack buttons for better usability */
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .column-left {
+    width: 100%;
+    height: auto;
+  }
+  .market-data {
+    padding: 10px;
+  }
+  .table th, .table td {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+/* For mobile phones (screens 480px and below) */
+@media screen and (max-width: 480px) {
+  .header-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .dashboard-value {
+    flex-direction: column;
+    align-items: center;
+  }
+  .table th, .table td {
+    font-size: 12px;
+    padding: 6px;
+  }
+  .dashboard-data {
+    font-size: 18px;
+  }
+}

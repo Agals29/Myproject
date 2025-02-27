@@ -54,8 +54,15 @@ const App = () => {
           </div>
         </Col>
       </Row>
+      
+            {/* Orders Section */}
+            
+              <Row style={{ marginTop: "100px" }}>
+      
+              {" "}
+              {/* Add margin-top class for spacing */}
       {/* Orders Section */}
-      <Row>
+      
         <Col>
           <Orders />
         </Col>
