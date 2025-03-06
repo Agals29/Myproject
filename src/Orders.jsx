@@ -7,7 +7,6 @@ const OrdersPage = () => {
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
   const [showOrderConfirmation, setShowOrderConfirmation] = useState(false);
-  const [orders, setOrders] = useState([]);
   const [products, setProducts] = useState([]);
 
   // Fetch products from the backend
@@ -160,12 +159,7 @@ const OrdersPage = () => {
               </div>
 
               {/* Proceed Button */}
-              <button
-                onClick={() => setShowOrderConfirmation(true)}
-                className="proceed-btn"
-              >
-                Proceed
-              </button>
+             
             </>
           )}
         </div>

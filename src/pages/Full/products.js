@@ -438,12 +438,16 @@ export const Products = () => {
                       <Col md={6}>
                         <Form.Group>
                           <Form.Label>Main Category</Form.Label>
-                          <Form.Control
-                            type="text "
+                          <Form.Select
                             value={mainCategory}
                             onChange={(e) => setMainCategory(e.target.value)}
                             required
-                          />
+                          >
+                            <option value="">Select</option>
+                            <option value="Dinner">Dinner</option>
+                            <option value="Lunch">Lunch</option>
+                            <option value="Drinks">Drinks</option>
+                          </Form.Select>
                         </Form.Group>
                       </Col>
 

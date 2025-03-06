@@ -114,6 +114,7 @@ const CustomerReviews = () => {
             borderColor: "#FF6F00",
             color: "white",
             fontSize: "18px",
+            width: "20px",
           }}
         >
           &#8592;
@@ -125,11 +126,12 @@ const CustomerReviews = () => {
             position: "absolute",
             top: "50%",
             transform: "translateY(-50%)",
-            right: "-50px",
+            right: "-40px",
             backgroundColor: "#FF6F00",
             borderColor: "#FF6F00",
             color: "white",
             fontSize: "18px",
+            width: "20px",
           }}
         >
           &#8594;

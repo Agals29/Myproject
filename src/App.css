@@ -420,7 +420,7 @@ app {
   }
 
   .quote p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     line-height: 2em;
   }
 
@@ -581,7 +581,7 @@ app {
   opacity: 1;
   padding: 15px;
   width: 250px;
-  margin: 10px 0px 2px 35px;
+  margin: 10px 0px 2px 60px;
 }
 }
 /* Prevent horizontal overflow */
