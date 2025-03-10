@@ -27,7 +27,7 @@
 
 /* Image size adjustment */
 .gallery-image {
-  width: 100%; /* Makes the image stretch across the column */
+  width: 95%; /* Makes the image stretch across the column */
   height: auto;
    border: 5px solid #ff4500;
   object-fit: cover; 
@@ -51,40 +51,83 @@
 
 
 /* Responsive styling for heading and paragraph */
-@media (max-width: 768px) {
+/* Small screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .gallery-heading {
+    font-size: 1.8rem;
+    margin: 15px;
+    margin: 2px 10px;
+  }
+
+  .gallery-paragraph {
+    font-size: 1.2rem;
+    line-height: 1.2em;
+    width: 200px;
+    margin: 2px 75px;
+  }
+
+  .gallery-image {
+    width: 70%; /* Make it responsive */
+    height: 180px;
+    margin: 8px 50px;
+    border-radius: 5px;
+    
+  }
+
+  .gallery-image:hover {
+    transform: scale(1.03);
+  }
+}
+
+/* Medium screens (481px to 760px) */
+@media (min-width: 481px) and (max-width: 760px) {
   .gallery-heading {
     font-size: 2rem;
     margin: 20px;
   }
+
   .gallery-paragraph {
-    font-size: 1.4rem;
-    line-height: 1em;
-    width:250px;
-    margin: 39px;
+    font-size: 1.3rem;
+    line-height: 1.3em;
+    width: 250px;
+    margin: 30px;
   }
 
-  /* Make images bigger on mobile */
   .gallery-image {
-    width: 370px;
-    height: 280px;
-   
-  }
-   .gallery-image:hover {
-    transform: scale(1.02); /* Slight zoom effect for smaller screens */
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15); /* Slightly lighter shadow */
-    border: none; /* Remove the border on hover */
+    width: 85%;
+    height: 220px;
+    margin: 10px auto;
+    border-radius: 8px;
   }
 
-  .gallery-image.clicked {
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15); /* Consistent shadow with hover */
-    border: none; /* Ensure no border */
-  }
-
-  /* Optionally, reduce image size for better layout */
-  .gallery-image {
-    width: 90%; /* Adjust width to fit smaller screens */
-    margin: 10px 10px; /* Center the image */
-    border-radius: 5px; /* Slightly reduce rounded corners */
+  .gallery-image:hover {
+    transform: scale(1.04);
   }
 }
 
+/* Large screens (761px to 1024px) */
+@media (min-width: 761px) and (max-width: 1024px) {
+  .gallery-heading {
+    font-size: 2.2rem;
+    margin: 25px;
+  }
+
+  .gallery-paragraph {
+    font-size: 1.4rem;
+    line-height: 1.4em;
+    width: 300px;
+    margin: 35px;
+  }
+
+  .gallery-image {
+    width: 80%;
+    height: 250px;
+    margin: 15px auto;
+    border-radius: 10px;
+  }
+
+  .gallery-image:hover {
+    transform: scale(1.05);
+  }
+}
+/* Extra Small screens (max-width: 320px) */

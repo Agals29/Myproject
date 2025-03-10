@@ -110,7 +110,7 @@
     align-items: flex-start;
     gap: 10px; /* Add spacing between items */
     text-align: left; /* Align text to left */
-    padding: 8px;
+    padding: 7px;
   }
 
   .contact-item {

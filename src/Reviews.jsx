@@ -126,7 +126,7 @@ const CustomerReviews = () => {
             position: "absolute",
             top: "50%",
             transform: "translateY(-50%)",
-            right: "-40px",
+            right: "-30px",
             backgroundColor: "#FF6F00",
             borderColor: "#FF6F00",
             color: "white",

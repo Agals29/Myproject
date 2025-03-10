@@ -583,6 +583,9 @@ app {
   width: 250px;
   margin: 10px 0px 2px 60px;
 }
+.cart-icon{
+  margin-left: 20px;
+}
 }
 /* Prevent horizontal overflow */
 body {
